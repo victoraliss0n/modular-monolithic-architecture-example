@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: nav9_quasar_flash
+    image: postgres:11.8
+    environment:
+      POSTGRES_DB: "nav9_quasar_flash_example"
+      POSTGRES_USER: "nav9_quasar_flash_user"
+      POSTGRES_PASSWORD: "nav9_quasar_flash_password"
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    networks:
+      - app-network
+    external_links:
+      - app-network
+    volumes:
+      - ./.docker-volumes/pgdata2:/var/lib/postgresql/data
+
+  mongodb_container:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+  redis:
+    container_name: nav9_quasar_flash_redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - .:/usr/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+
+volumes:
+  mongodb_data_container:
