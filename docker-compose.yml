@@ -36,6 +36,34 @@ services:
     networks:
       - app-network
 
+  app:
+    build:
+      context: .
+    container_name: app-all-module
+    command: yarn start:dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/app
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+      - mongodb_container
+      - redis
+
+  app-credit:
+    build:
+      context: .
+    container_name: app-credit
+    command: yarn credit:start:dev
+    ports:
+      - '3001:3001'
+    volumes:
+      - .:/usr/app
+    networks:
+      - app-network
+
 networks:
   app-network:
 
