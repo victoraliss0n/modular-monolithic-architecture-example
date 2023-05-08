@@ -42,7 +42,7 @@ services:
     container_name: app-all-module
     command: yarn start:dev
     ports:
-      - '3000:3000'
+      - '3002:3002'
     volumes:
       - .:/usr/app
     networks:
@@ -58,7 +58,7 @@ services:
     container_name: app-credit
     command: yarn credit:start:dev
     ports:
-      - '3001:3001'
+      - '3003:3003'
     volumes:
       - .:/usr/app
     networks:
