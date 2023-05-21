@@ -2,10 +2,10 @@ import { InjectQueue } from '@nestjs/bull';
 import { Inject, Injectable } from '@nestjs/common';
 import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
 import { Queue } from 'bull';
-import { CreateUserDto } from './dtos/create-users.dto';
+import { CreateUserDto } from '../http/dtos/create-users.dto';
 import { User } from './entities/users.entity';
 import { UsersRepository, USERS_REPOSITORY_TOKEN } from './repositories/user.repository.interface';
-import { UserCreatedEvent } from '../../common/events/user-created.event';
+import { UserCreatedEvent } from '../../../common/events/user-created.event';
 
 @Injectable()
 export class UsersService {

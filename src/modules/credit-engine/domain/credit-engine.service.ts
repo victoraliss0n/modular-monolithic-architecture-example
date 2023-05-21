@@ -7,6 +7,6 @@ export class CreditService {
 
     @Get()
     findAll() {
-        return 'Hello Credit'
+        return 'Hello Credit Engine'
     }
 }

@@ -2,7 +2,7 @@ import { Injectable, Provider } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DataSource } from '../../../common/constants/datasource-typeorm';
+import { DataSource } from '../../../../common/constants/datasource-typeorm';
 import { User } from '../models/users.model';
 import { USERS_REPOSITORY_TOKEN } from './user.repository.interface';
 import { UsersInMemoryRepository } from './implementations/users.in-memory.repository';

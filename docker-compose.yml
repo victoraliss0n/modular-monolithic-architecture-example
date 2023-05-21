@@ -2,12 +2,12 @@ version: '3'
 
 services:
   postgres:
-    container_name: nav9_quasar_flash
+    container_name: qso
     image: postgres:11.8
     environment:
-      POSTGRES_DB: "nav9_quasar_flash_example"
-      POSTGRES_USER: "nav9_quasar_flash_user"
-      POSTGRES_PASSWORD: "nav9_quasar_flash_password"
+      POSTGRES_DB: "qso_example"
+      POSTGRES_USER: "qso_user"
+      POSTGRES_PASSWORD: "qso_password"
     ports:
       - "5432:5432"
     expose:
@@ -27,7 +27,7 @@ services:
       - mongodb_data_container:/data/db
 
   redis:
-    container_name: nav9_quasar_flash_redis
+    container_name: qso_redis
     image: redis:alpine
     ports:
       - 6379:6379
@@ -35,34 +35,33 @@ services:
       - .:/usr/app
     networks:
       - app-network
+  # app:
+  #   build:
+  #     context: .
+  #   container_name: app-all-module
+  #   command: yarn start:dev
+  #   ports:
+  #     - '3002:3002'
+  #   volumes:
+  #     - .:/usr/app
+  #   networks:
+  #     - app-network
+  #   depends_on:
+  #     - postgres
+  #     - mongodb_container
+  #     - redis
 
-  app:
-    build:
-      context: .
-    container_name: app-all-module
-    command: yarn start:dev
-    ports:
-      - '3002:3002'
-    volumes:
-      - .:/usr/app
-    networks:
-      - app-network
-    depends_on:
-      - postgres
-      - mongodb_container
-      - redis
-
-  app-credit:
-    build:
-      context: .
-    container_name: app-credit
-    command: yarn credit:start:dev
-    ports:
-      - '3003:3003'
-    volumes:
-      - .:/usr/app
-    networks:
-      - app-network
+  # app-credit:
+  #   build:
+  #     context: .
+  #   container_name: app-credit
+  #   command: yarn credit:start:dev
+  #   ports:
+  #     - '3003:3003'
+  #   volumes:
+  #     - .:/usr/app
+  #   networks:
+  #     - app-network
 
 networks:
   app-network:

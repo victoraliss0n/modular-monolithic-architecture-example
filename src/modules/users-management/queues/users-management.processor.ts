@@ -5,7 +5,7 @@ import { Job } from 'bull';
 import { Model } from 'mongoose';
 import { UserCreatedEvent } from 'src/common/events/user-created.event';
 import { LoggerService } from 'src/common/loggers/logger.service';
-import { User } from './user.schema';
+import { User } from '../domain/user.schema';
 
 @Processor('users')
 export class UsersManagementProcessor {

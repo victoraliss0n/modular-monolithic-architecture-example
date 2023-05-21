@@ -1,7 +1,7 @@
 import { ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { AllExceptionsFilter } from './common/filters/exception.filter'
-import { CreditModule } from './domain/credit-engine/credit-engine.module'
+import { CreditModule } from './modules/credit-engine/credit-engine.module'
 
 
 async function bootstrap() {

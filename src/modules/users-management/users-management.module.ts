@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerModule } from 'src/common/loggers/logger.module';
-import { User } from '../users/models/users.model';
-import { UserSchema } from './user.schema';
-import { UsersManagementProcessor } from './users-management.processor';
+import { User, UserSchema } from './domain/user.schema';
+import { UsersManagementProcessor } from './queues/users-management.processor';
 
 @Module({
     imports: [

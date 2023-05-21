@@ -5,10 +5,10 @@ import { ConfigModule, ConfigType } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import databaseConfig from '../config/database.config';
 import { UploadS3Module } from '../common/s3/uploader3.module';
-import { UsersManagementModule } from './../domain/users-management/users-management.module';
-import { User } from '../domain/users/models/users.model';
-import { UsersModule } from '../domain/users/users.module';
+import { UsersManagementModule } from '../modules/users-management/users-management.module';
+import { UsersModule } from '../modules/users/users.module';
 import redisConfig from 'src/config/redis.config';
+import { User } from 'src/modules/users/domain/models/users.model';
 
 @Module({
     imports: [

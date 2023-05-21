@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Controller, Get } from '@nestjs/common'
-import { CreditService } from './credit-engine.service'
+import { CreditService } from '../domain/credit-engine.service'
 
 @Controller('credit')
 export class CreditController {
