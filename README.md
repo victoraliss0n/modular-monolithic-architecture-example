@@ -25,6 +25,7 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
 [Talk](https://youtu.be/meTijEveINU) Arquitetura de Monolito Modular na prática com Nest.js - com Victor Alisson
 
 
